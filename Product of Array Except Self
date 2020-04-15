@@ -1,0 +1,20 @@
+class Solution:
+    def productExceptSelf(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        size = len(nums)
+        ary_left = [1] * size
+        ary_right = [1] * size
+        ary_res = []
+
+        for i in range(size-1):
+            ary_left[i+1]*= ary_left[i]*nums[i]
+
+        for i in range(size-1, 0, -1):
+            ary_right[i-1]*= ary_right[i]*nums[i]
+
+        for i in range(size):
+            ary_res.append(ary_left[i]*ary_right[i])
+        return ary_res
