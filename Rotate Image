@@ -3,7 +3,8 @@ Rotate the image by 90 degrees (clockwise).
 
 https://leetcode.com/problems/rotate-image/
 
-```class Solution {
+```
+class Solution {
 public:
     void rotate(vector<vector<int>>& matrix) {
         int n = matrix.size();
